@@ -684,9 +684,10 @@ nav {
   font-weight: 600;
 }
 
-/* Certifications Section */
+/* ===== Certifications Section ===== */
 #certifications {
   padding: 100px 0;
+  font-family: 'Segoe UI', sans-serif;
   background: white;
 }
 
@@ -698,31 +699,53 @@ nav {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  transition: all 0.5s ease;
 }
 
+/* ===== Group Labels ===== */
+.group-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0077ff;
+  border-bottom: 3px solid #0077ff;
+  display: block;
+  padding-bottom: 6px;
+}
+
+/* ===== Container & Groups ===== */
 .certifications-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 40px;
 }
 
+.certification-group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ===== Certification Cards ===== */
 .certification-item {
-  background: white;
+  background: #ffffff;
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  border-left: 4px solid #8b5cf6;
+  border-radius: 16px;
+  border-left: 5px solid #8b5cf6;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
 }
 
 .certification-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  border-left-color: #6366f1;
 }
 
 .certification-content {
@@ -732,9 +755,14 @@ nav {
 
 .certification-content h3 {
   color: #1e293b;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin: 0 0 0.5rem 0;
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.certification-item:hover .certification-content h3 {
+  color: #3b82f6;
 }
 
 .issuer {
@@ -748,34 +776,63 @@ nav {
 .date {
   background: linear-gradient(135deg, #8b5cf6, #6366f1);
   color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
+  padding: 0.45rem 1rem;
+  border-radius: 25px;
   font-size: 0.85rem;
   font-weight: 500;
   display: inline-block;
+  transition: background 0.3s ease;
 }
 
+.certification-item:hover .date {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+/* ===== Certificate View Button ===== */
 .certificate-view {
   background: linear-gradient(135deg, #10b981, #059669);
   color: white;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 5px 18px rgba(16, 185, 129, 0.3);
+  transition: all 0.4s ease;
 }
 
 .certificate-view:hover {
   background: linear-gradient(135deg, #059669, #047857);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
   color: white;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  #certifications h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .certification-group {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .certificate-view {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Skills Section */
