@@ -1,6 +1,6 @@
 # Sachin Kumar - Portfolio Website
 
-![Portfolio Preview](images/My_portfolio.png)
+![Portfolio Preview](public/images/My_portfolio.png)
 
 A modern, responsive portfolio website showcasing my skills, projects and experience as a Software Engineer & AI/ML Developer.
 
